@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaUser, FaBell } from "react-icons/fa"; // Import icons from react-icons
 import NavLink from "../../ui/navbarlink";
 import logo from "../../assets/logo.jpg";
 import "../../styles/navbar.css";
@@ -8,7 +9,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(true);
   const [activeLink, setActiveLink] = useState("/");
   const [isVisible, setIsVisible] = useState(true);
-  const [isAtTop, setIsAtTop] = useState(true); // New state to track if at top
+  const [isAtTop, setIsAtTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => {
@@ -30,14 +31,12 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Update visibility based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 70) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
-      // Update background state based on scroll position
       if (currentScrollY <= 70) {
         setIsAtTop(true);
       } else {
@@ -64,6 +63,8 @@ function Navbar() {
     { href: "/story", label: "Story" },
     { href: "/location", label: "Location" },
     { href: "/contact", label: "Contact Us" },
+    { href: "/profile", label: <FaUser className="navbar-icon" />, isIcon: true }, // User icon
+    { href: "/notifications", label: <FaBell className="navbar-icon" />, isIcon: true }, // Notification icon
   ];
 
   const linkVariants = {
@@ -96,7 +97,7 @@ function Navbar() {
     <nav
       className={`navbar w-full ${
         isVisible ? "visible" : "hidden"
-      } ${isAtTop ? "at-top" : "scrolled"}`} // Add class based on scroll position
+      } ${isAtTop ? "at-top" : "scrolled"}`}
     >
       <div className="navbar-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <label htmlFor="check" className={`navbar-hamburger-wrapper ${isOpen ? "open" : "closed"}`}>
@@ -141,6 +142,7 @@ function Navbar() {
                     href={link.href}
                     isActive={activeLink === link.href}
                     onClick={() => handleLinkClick(link.href)}
+                    className={link.isIcon ? "navbar-icon-link" : ""}
                   >
                     {link.label}
                   </NavLink>
@@ -165,7 +167,9 @@ function Navbar() {
                   href={link.href}
                   isActive={activeLink === link.href}
                   onClick={() => handleLinkClick(link.href)}
-                  className="text-white text-lg font-medium hover:text-red-600 transition-colors"
+                  className={`${
+                    link.isIcon ? "navbar-icon-link" : "text-white text-lg font-medium hover:text-red-600 transition-colors"
+                  } ${link.isIcon ? "flex items-center" : ""}`}
                 >
                   {link.label}
                 </NavLink>
