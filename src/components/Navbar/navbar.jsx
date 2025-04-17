@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUser, FaBell } from "react-icons/fa"; // Import icons from react-icons
+import { FaUser, FaBell } from "react-icons/fa";
 import NavLink from "../../ui/navbarlink";
 import logo from "../../assets/logo.jpg";
 import "../../styles/navbar.css";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(() => window.innerWidth > 768); 
   const [activeLink, setActiveLink] = useState("/");
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -53,6 +53,20 @@ function Navbar() {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsOpen(window.innerWidth > 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const navLinksLeft = [
     { href: "/", label: "Home" },
     { href: "/menu", label: "Menu" },
@@ -63,8 +77,16 @@ function Navbar() {
     { href: "/story", label: "Story" },
     { href: "/location", label: "Location" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/profile", label: <FaUser className="navbar-icon" />, isIcon: true }, // User icon
-    { href: "/notifications", label: <FaBell className="navbar-icon" />, isIcon: true }, // Notification icon
+    {
+      href: "/profile",
+      label: <FaUser className="navbar-icon" />,
+      isIcon: true,
+    },
+    {
+      href: "/notifications",
+      label: <FaBell className="navbar-icon" />,
+      isIcon: true,
+    },
   ];
 
   const linkVariants = {
@@ -95,13 +117,21 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar w-full ${
-        isVisible ? "visible" : "hidden"
-      } ${isAtTop ? "at-top" : "scrolled"}`}
+      className={`navbar w-full ${isVisible ? "visible" : "hidden"} ${
+        isAtTop ? "at-top" : "scrolled"
+      }`}
     >
       <div className="navbar-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <label htmlFor="check" className={`navbar-hamburger-wrapper ${isOpen ? "open" : "closed"}`}>
-          <input type="checkbox" id="check" checked={isOpen} onChange={toggleMenu} />
+        <label
+          htmlFor="check"
+          className={`navbar-hamburger-wrapper ${isOpen ? "open" : "closed"}`}
+        >
+          <input
+            type="checkbox"
+            id="check"
+            checked={isOpen}
+            onChange={toggleMenu}
+          />
           <span></span>
           <span></span>
           <span></span>
@@ -168,7 +198,9 @@ function Navbar() {
                   isActive={activeLink === link.href}
                   onClick={() => handleLinkClick(link.href)}
                   className={`${
-                    link.isIcon ? "navbar-icon-link" : "text-white text-lg font-medium hover:text-red-600 transition-colors"
+                    link.isIcon
+                      ? "navbar-icon-link"
+                      : "text-white text-lg font-medium hover:text-red-600 transition-colors"
                   } ${link.isIcon ? "flex items-center" : ""}`}
                 >
                   {link.label}
