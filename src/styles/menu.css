@@ -488,6 +488,7 @@
     margin: 0 auto;
     display: block;
     padding: 0 0.75rem;
+    width: 100%;
   }
 
   .dotted-divider {

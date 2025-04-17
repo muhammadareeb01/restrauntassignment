@@ -37,7 +37,7 @@ function StorySection() {
       <div className="story-split gap-10 w-full">
         <div
           className="story-text md:w-1/3 max-w-[100%] mx-auto"
-          style={{ width: "30%" }}
+    
         >
           <h2 className="font-normal mb-4" data-aos="fade-up">
             <span className="block text-4xl text-right md:text-5xl">
