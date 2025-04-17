@@ -1,0 +1,159 @@
+/* Testimonial Section */
+.bg-gray-100 {
+  background-color: #f5f5f5;
+}
+
+/* Ensure the container doesn't interfere with the fade */
+.testimonial-slider-container {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Override react-slick's default transition to prevent double fade */
+.testimonial-slider-container .slick-slide {
+  transition: none !important; /* Disable react-slick's transition */
+}
+
+/* Style the testimonial slide */
+.testimonial-slide {
+  transition: opacity 0.4s ease-in-out; /* 400ms fade-out + 400ms fade-in = 800ms total */
+  opacity: 1;
+ 
+  text-align: center;
+}
+
+/* Fade-out effect */
+.testimonial-slide.fade-out {
+  opacity: 0;
+}
+
+/* Fade-in effect */
+.testimonial-slide.fade-in {
+  opacity: 1;
+}
+
+/* Style the dots for better visibility */
+.slick-dots {
+  margin-top: 1rem;
+}
+
+.slick-dots li button:before {
+  color: #e6413b;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #e6413b;
+}
+
+/* Quotation Mark Box */
+.quotation-box {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  background-color: #e6413b;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .quotation-box {
+    display: none; /* Hide quotation box on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-col {
+    flex-direction: column;
+  }
+
+
+  .quotation-box {
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    background-color: #e6413b;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+
+  .w-full {
+    width: 100%;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .lg\:items-start {
+    align-items: center;
+  }
+
+  .lg\:text-left {
+    text-align: center;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .text-gray-800 {
+    color: #1f2937;
+  }
+
+  .text-red-600 {
+    color: #e6413b;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+
+
+  .quotation-box {
+    position: absolute;
+    top: 43%;
+    left: 49%;
+ 
+  }
+}

@@ -1,0 +1,1096 @@
+/* Main container for the entire page */
+.home-page {
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Hero Section: Top section with background curves */
+.hero-section {
+  position: relative;
+  min-height: 750px;
+  overflow: hidden;
+}
+
+/* Red semi-circle background at the top */
+.hero-red-curve {
+  width: 100%;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e6413b;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  z-index: 0;
+  box-shadow: 0 0 20px rgba(230, 65, 59, 0.5), 0 0 40px rgba(230, 65, 59, 0.3);
+  animation: pulseBorder 3s infinite ease-in-out;
+}
+
+@keyframes pulseBorder {
+  0% {
+    transform: scale(1);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    box-shadow: 0 0 20px rgba(230, 65, 59, 0.5), 0 0 40px rgba(230, 65, 59, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    border-radius: 0 0 48% 48% / 0 0 96% 96%;
+    box-shadow: 0 0 30px rgba(230, 65, 59, 0.7), 0 0 50px rgba(230, 65, 59, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    box-shadow: 0 0 20px rgba(230, 65, 59, 0.5), 0 0 40px rgba(230, 65, 59, 0.3);
+  }
+}
+
+/* Black inner semi-circle background */
+.hero-black-curve {
+  width: 96%;
+  height: 690px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+.hero-image-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/backgroundd.jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.hero-image-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.discount-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  overflow: hidden;
+  z-index: 2;
+  background: transparent;
+}
+
+.discount-delivery-row {
+  position: absolute;
+  top: 81%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 3;
+  background: transparent;
+}
+
+.delivery-info {
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 3;
+  background: transparent;
+}
+
+.bike-icon {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+  background: transparent;
+}
+
+.delivery-text {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.delivery-text span {
+  display: block;
+}
+
+.delivery-text .available {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.discount-rotator {
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: none;
+  z-index: 3;
+}
+
+.discount-box {
+  background-color: #e6413b;
+  padding: 1.5rem 0.5rem;
+  z-index: 3;
+}
+
+.discount-box p {
+  display: inline;
+  color: #ffffff;
+}
+
+.discount-box span {
+  color: white;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+  /* padding: 1rem 0; */
+}
+
+.hero-split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-image {
+  /* flex: 1; */
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  /* flex: 1; */
+  width: 70% !important;
+  /* margin: ; */
+  margin-top: -3rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  display: block;
+  width: 60%;
+}
+
+.hero-text p {
+  margin-bottom: 1.5rem;
+  display: block;
+  text-align: center;
+  width: 60%;
+}
+
+.hero-text .flex {
+  gap: 1rem;
+}
+
+/* Story Section */
+.story-section {
+  background-color: #ffffff;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.story-split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.story-image {
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  width: 350px;
+  z-index: 1;
+}
+
+.story-image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.white-circle-background {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 250px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 15px 0 20px -5px rgba(224, 36, 36, 0.5);
+  transform-origin: center;
+}
+
+.story-image-content {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  z-index: 3;
+}
+
+.story-text {
+  flex: 1;
+  text-align: right;
+}
+
+.story-text h2 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.story-text h2 span {
+  display: block;
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.story-food-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.rotating-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.rotating-border {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #e6413b;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle-image-wrapper {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dimmed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  filter: brightness(0.7);
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  max-height: 80%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.btn-div {
+  width: 60%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1400px) {
+  .hero-description {
+    width: 60% !important;
+  }
+}
+
+/* Adjusted for 1200px to 1300px */
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .hero-section {
+    min-height: 650px;
+  }
+
+  .hero-red-curve {
+    height: 750px; /* Increased height to maintain semi-circle shape */
+    border-radius: 0 0 50% 50% / 0 0 100% 100%; /* Adjusted to maintain circular arc */
+  }
+
+  .hero-black-curve {
+    height: 740px;
+    width: 96%;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+
+  .discount-wrapper {
+    height: 750px;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+
+  .discount-delivery-row {
+    top: 82%; /* Slightly adjusted to fit within semi-circle */
+    gap: 0.9rem;
+    width: 90%;
+  }
+
+  .delivery-info {
+    gap: 0.9rem;
+  }
+
+  .bike-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .delivery-text {
+    font-size: 1.1rem;
+  }
+
+  .delivery-text .available {
+    font-size: 0.9rem;
+  }
+
+  .discount-box {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .discount-box .discount-percentage {
+    font-size: 1rem;
+  }
+
+  .discount-off {
+    font-size: 0.6rem !important;
+  }
+
+  .hero-text h1 {
+    width: 100%;
+    font-size: 4rem;
+  }
+
+  .hero-text .h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text .h2 {
+    font-size: 3.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    width: 70%;
+  }
+
+  .hero-content {
+    /* padding: 0.9rem 0; */
+  }
+
+  .hero-split {
+    gap: 0.9rem;
+  }
+
+  .hero-image,
+  .hero-text {
+    margin-top: -2.5rem;
+  }
+
+  .hero-image-content {
+    max-width: 350px;
+  }
+
+  .order {
+    font-size: 0.9rem !important;
+    padding: 0.8rem 1.2rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn-div {
+    width: 100%;
+  }
+
+  .hero-section {
+    min-height: 600px;
+  }
+
+  .hero-red-curve {
+    height: 600px;
+    border-radius: 0 0 45% 45% / 0 0 90% 90%;
+  }
+
+  .hero-black-curve {
+    height: 590px;
+    width: 95%;
+    border-radius: 0 0 45% 45% / 0 0 90% 90%;
+  }
+
+  .discount-wrapper {
+    height: 600px;
+    border-radius: 0 0 45% 45% / 0 0 90% 90%;
+  }
+
+  .discount-delivery-row {
+    top: 85%;
+    gap: 0.75rem;
+  }
+
+  .delivery-info {
+    gap: 0.75rem;
+  }
+
+  .hero-text h1 {
+    font-size: 3.5rem;
+    width: 100%;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .btn-div {
+    width: 100%;
+  }
+
+  .hero-content {
+    /* padding: 0.75rem 0; */
+  }
+
+  .discount-box {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .discount-box .discount-percentage {
+    font-size: 0.9rem;
+  }
+
+  .discount-off {
+    font-size: 0.5rem !important;
+  }
+
+  .bike-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .delivery-text {
+    font-size: 1rem;
+  }
+
+  .delivery-text .available {
+    font-size: 0.8rem;
+  }
+
+  .hero-split {
+    gap: 0.75rem;
+  }
+
+  .hero-image,
+  .hero-text {
+    margin-top: -2rem;
+  }
+
+  .story-section {
+    padding: 2rem 0;
+  }
+
+  .story-split {
+    width: 90%;
+    gap: 3rem;
+  }
+
+  .story-image {
+    left: -10%;
+    width: 200px;
+  }
+
+  .story-image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .white-circle-background {
+    width: 180px;
+    height: 180px;
+    top: 10px;
+    left: 10px;
+    box-shadow: 12px 0 18px -5px rgba(224, 36, 36, 0.5);
+  }
+
+  .story-text {
+    width: 40%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .story-text h2 span {
+    font-size: 3rem;
+  }
+
+  .story-text h2 span:last-child {
+    font-size: 6rem;
+  }
+
+  .story-text p {
+    width: 70%;
+    font-size: 0.9rem;
+  }
+
+  .story-split > div:nth-child(2) {
+    width: 60%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .rotating-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-image-wrapper {
+    width: 90%;
+    height: 90%;
+  }
+
+  .overlay-image {
+    width: 70%;
+    max-height: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 700px;
+  }
+
+  .hero-red-curve {
+    height: 700px;
+    border-radius: 0 0 30% 30% / 0 0 60% 60%;
+  }
+
+  .hero-black-curve {
+    height: 690px;
+    width: 94%;
+    border-radius: 0 0 30% 30% / 0 0 60% 60%;
+  }
+
+  .discount-wrapper {
+    height: 700px;
+    border-radius: 0 0 30% 30% / 0 0 60% 60%;
+  }
+
+  .discount-delivery-row {
+    top: 85%;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    width: 90%;
+    justify-content: center;
+  }
+
+  .delivery-info {
+    gap: 0.5rem;
+  }
+
+  .hero-text .h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text .h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 0.875rem;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    /* padding: 0.5rem 0; */
+  }
+
+  .order {
+    font-size: 0.7rem !important;
+    padding: 0.5rem 0.3rem !important;
+  }
+  .hero-split {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-image,
+  .hero-text {
+    width: 60%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero-image {
+    margin-bottom: 1rem;
+  }
+
+  .hero-image-content {
+    max-width: 250px;
+  }
+
+  .hero-text .flex {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-text .flex a {
+    width: 30%;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+
+  .discount-box {
+    padding: 0rem 0rem !important;
+  }
+
+  .discount-percentage {
+    font-size: 0.8rem;
+  }
+
+  .discount-off {
+    font-size: 0.8rem !important;
+  }
+
+  .bike-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .delivery-text {
+    font-size: 0.875rem;
+  }
+
+  .delivery-text .available {
+    font-size: 0.7rem;
+  }
+
+  .story-section {
+    padding: 2rem 0;
+  }
+
+  .story-split {
+    flex-direction: column;
+    width: 100%;
+    gap: 3rem;
+    padding: 1rem 0;
+  }
+
+  .story-image {
+    position: relative;
+    left: 0;
+    width: 150px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .story-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .white-circle-background {
+    width: 130px;
+    height: 130px;
+    top: 10px;
+    left: 10px;
+    box-shadow: 10px 0 15px -5px rgba(224, 36, 36, 0.5);
+  }
+
+  .story-text {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-text h2 span {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .story-text h2 span:last-child {
+    font-size: 4rem;
+  }
+
+  .story-text p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  .story-text .beautiful-button {
+    margin: 0 auto;
+  }
+
+  .story-split > div:nth-child(2) {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .rotating-image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-image-wrapper {
+    width: 90%;
+    height: 90%;
+  }
+
+  .overlay-image {
+    width: 60%;
+    max-height: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .discount-delivery-row {
+    top: 87%; /* Moved slightly downward from 85% */
+  }
+
+  .hero-text .flex a {
+    font-size: 0.9rem; /* Slightly larger font size for buttons */
+    padding: 0.75rem 1rem; /* Increased padding for buttons */
+  }
+}
+
+@media (max-width: 600px) {
+  .discount-delivery-row {
+    top: 85%; /* Reduced from 85% to bring it closer to the top */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 650px;
+  }
+
+  .discount-delivery-row {
+    top: 87%;
+    gap: 0.4rem;
+    width: 95%;
+  }
+
+  .hero-red-curve {
+    height: 650px;
+    border-radius: 0 0 25% 25% / 0 0 50% 50%;
+  }
+
+  .hero-black-curve {
+    height: 640px;
+    width: 92%;
+    border-radius: 0 0 25% 25% / 0 0 50% 50%;
+  }
+
+  .discount-wrapper {
+    height: 650px;
+    border-radius: 0 0 25% 25% / 0 0 50% 50%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 0.75rem;
+    width: 85%;
+  }
+
+  .hero-content {
+    /* padding: 0.25rem 0; */
+  }
+
+  .hero-text .flex a {
+    width: 35%;
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+  }
+
+  .hero-image-content {
+    max-width: 200px;
+  }
+
+  .discount-box {
+    padding: 0.3rem 0.4rem !important;
+    /* display: inline !important; */
+  }
+
+  .discount-percentage {
+    font-size: 0.7rem;
+  }
+
+  .discount-off {
+    font-size: 0.8rem;
+  }
+
+  .bike-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .delivery-text {
+    font-size: 0.65rem;
+  }
+
+  .delivery-text .available {
+    font-size: 0.6rem;
+  }
+
+  .story-section {
+    padding: 1.5rem 0;
+  }
+
+  .story-image {
+    position: relative;
+    left: 0;
+    width: 120px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .story-image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .white-circle-background {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    box-shadow: 8px 0 12px -5px rgba(224, 36, 36, 0.5);
+  }
+
+  .story-split {
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .story-text {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .story-text h2 span {
+    font-size: 2rem;
+  }
+
+  .story-text h2 span:last-child {
+    font-size: 3rem;
+  }
+
+  .story-text p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.75rem;
+  }
+
+  .story-split > div:nth-child(2) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .rotating-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle-image-wrapper {
+    width: 90%;
+    height: 90%;
+  }
+
+  .overlay-image {
+    width: 50%;
+    max-height: 50%;
+  }
+}
+
+/* Primary button for actions */
+.button {
+  min-width: 120px;
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255, 0.96);
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.2;
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button:hover {
+  color: rgb(255, 255, 255, 1);
+  transform: scale(1.1) translateY(-3px);
+  background-color: transparent !important;
+  border: 1px solid #e6413b !important;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+/* Secondary button for "Read more" */
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #cb2020, #e6413b);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #e6413b, #cb2020);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+.story-text .beautiful-button {
+  display: block;
+}
+
+
+
+/* Dotted Path Styling */
+.dotted-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.dotted-path path {
+  stroke: #e6413b;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+  fill: none;
+}
+
+/* Ensure the path is hidden on smaller screens if needed */
+@media (max-width: 768px) {
+  .dotted-path {
+    display: none;
+  }
+}
