@@ -5,12 +5,10 @@ import logo from "../../assets/logo.jpg";
 import "../../styles/navbar.css";
 
 function Navbar() {
-  // Set initial state of isOpen based on screen size
-  const [isOpen, setIsOpen] = useState(() => {
-    return window.innerWidth > 768; // true for desktop (>768px), false for mobile (≤768px)
-  });
+  const [isOpen, setIsOpen] = useState(true);
   const [activeLink, setActiveLink] = useState("/");
   const [isVisible, setIsVisible] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true); // New state to track if at top
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => {
@@ -32,34 +30,29 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Update visibility based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 70) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
+      // Update background state based on scroll position
+      if (currentScrollY <= 70) {
+        setIsAtTop(true);
+      } else {
+        setIsAtTop(false);
+      }
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
-
-  // Add resize listener to update isOpen when screen size changes
-  useEffect(() => {
-    const handleResize = () => {
-      setIsOpen(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const navLinksLeft = [
     { href: "/", label: "Home" },
@@ -103,7 +96,7 @@ function Navbar() {
     <nav
       className={`navbar w-full ${
         isVisible ? "visible" : "hidden"
-      } bg-transparent`}
+      } ${isAtTop ? "at-top" : "scrolled"}`} // Add class based on scroll position
     >
       <div className="navbar-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <label htmlFor="check" className={`navbar-hamburger-wrapper ${isOpen ? "open" : "closed"}`}>

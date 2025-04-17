@@ -1,7 +1,6 @@
-// src/components/HeroSection.js
+
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../Navbar/navbar";
 import wrapsImage from "../../assets/wrapsImage.png";
 import bikeAnimation from "../../assets/delivery-scooter.gif";
 
@@ -46,7 +45,6 @@ function HeroSection() {
         </div>
       </div>
       <div className="hero-content w-full mx-auto  z-10 relative">
-        <Navbar />
         <div className="hero-split flex flex-col md:flex-row items-left justify-between">
           <div className="hero-image lg:w-w-1/2 md:w-1/2 flex justify-center md:justify-start">
             <img

@@ -1,14 +1,23 @@
 .navbar {
-  /* padding: 1rem 0; */
   height: 70px;
   margin: 0px !important;
   padding: 0px !important;
   display: flex;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add background transition */
+}
+
+.navbar.at-top {
+  background: transparent; /* Transparent background at the top */
+}
+
+.navbar.scrolled {
+  background-color: rgba(220, 38, 38, 0.85); /* Solid dark background when scrolled */
 }
 
 .navbar.visible {
@@ -28,7 +37,7 @@
   width: 100%;
 }
 
-/* Hamburger Wrapper  */
+/* Hamburger Wrapper */
 .navbar-hamburger-wrapper {
   display: flex;
   flex-direction: column;
@@ -37,18 +46,16 @@
   z-index: 20;
 }
 
-
 .navbar-hamburger-wrapper.closed {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-
 .navbar-hamburger-wrapper.inside-links {
   position: static;
   transform: none;
-  margin-right: 1rem; 
+  margin-right: 1rem;
 }
 
 .navbar-hamburger-wrapper span {

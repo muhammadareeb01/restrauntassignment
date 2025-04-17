@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {location.pathname !== "/" && <Navbar />}
+      <Navbar />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
