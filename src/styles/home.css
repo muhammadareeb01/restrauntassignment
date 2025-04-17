@@ -369,7 +369,7 @@
 /* Adjusted for 1200px to 1300px */
 @media (min-width: 1200px) and (max-width: 1300px) {
   .hero-section {
-    min-height: 650px;
+    height: auto;
   }
 
   .hero-red-curve {
@@ -678,11 +678,16 @@
     gap: 0.5rem;
   }
 
-  .hero-image,
-  .hero-text {
+  .hero-image
+   {
     width: 60%;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 80px !important;
+    margin-bottom:  0px !important;
+  }
+  .hero-text{
+    
+    margin-top: 30px !important;
   }
 
   .hero-image {
@@ -830,7 +835,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    min-height: 650px;
+    height: 100%;
   }
 
   .discount-delivery-row {
